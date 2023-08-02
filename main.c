@@ -29,27 +29,31 @@ void calculatingRentalPrice(Car* inventoryOfCars, int countCars) {
     int productId, days;
     float totalPrice = 0;
 
-    printf("Введіть ID автомобіля для оренди: ");
-    scanf("%d", &productId);
-
     bool carFound = false;
-    for (int i = 0; i < countCars; i++) {
-        if (inventoryOfCars[i].id == productId) {
-            carFound = true;
 
-            printf("Введіть кількість днів для оренди: ");
-            scanf("%d", &days);
+    do {
+        printf("Введіть ID автомобіля для оренди: ");
+        scanf("%d", &productId);
 
-            totalPrice = inventoryOfCars[i].price * days;
-            break;
+        for (int i = 0; i < countCars; i++) {
+            if (inventoryOfCars[i].id == productId) {
+                carFound = true;
+
+                printf("Введіть кількість днів для оренди: ");
+                scanf("%d", &days);
+
+                totalPrice = inventoryOfCars[i].price * days;
+                break;
+            }
         }
-    }
 
-    if (!carFound) {
-        printf("Помилка: Автомобіль з ідентифікатором %d не знайдено.\n", productId);
-    } else {
-        printf("Загальна ціна оренди: %.2f грн\n", totalPrice);
-    }
+        if (!carFound) {
+            printf("Помилка: Автомобіль з ідентифікатором %d не знайдено. Будь ласка, спробуйте ще раз.\n", productId);
+        }
+
+    } while (!carFound);
+
+    printf("Загальна ціна оренди: %.2f грн\n", totalPrice);
 }
 
 int main()
