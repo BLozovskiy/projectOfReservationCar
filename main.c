@@ -15,6 +15,17 @@ typedef struct {
     float price, engineCapacity, enginePower;
 } Car;
 
+void listOfCars(Car* inventoryOfCars, int countCars) {
+    printf("Список продуктів:\n");
+    for (int i = 0; i < countCars; i++) {
+        printf("ID: %d, Бренд: %s, Модель: %s, Клас: %s, Кузов: %s, Трансмісія: %s, Паливо: %s, Двигун: %f л. %f к. с., Ціна: %.2f грн\n",
+            inventoryOfCars[i].id, inventoryOfCars[i].brand, inventoryOfCars[i].model, inventoryOfCars[i].class,
+            inventoryOfCars[i].body, inventoryOfCars[i].transmission, inventoryOfCars[i].fuel, inventoryOfCars[i].engineCapacity, inventoryOfCars[i].enginePower,
+            inventoryOfCars[i].price);
+    }
+}
+
+
 int main()
 {
     printf("Hello World");
