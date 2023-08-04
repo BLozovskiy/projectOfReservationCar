@@ -176,6 +176,204 @@ void removeRentalFromCart() {
     }
 }
 
+void filterForCarsByBrand(Car inventoryOfCars[], int numCars) {
+    char brandFilter[20];
+    printf("\nВведіть назву бренду автомобілів: ");
+    scanf("%s", brandFilter);
+
+    printf("\nРезультати після фільтрації за брендом %s:\n", brandFilter);
+
+    bool foundCars = false;
+
+    for (int i = 0; i < numCars; i++) {
+        if (strcmp(inventoryOfCars[i].brand, brandFilter) == 0) {
+            foundCars = true;
+            printf("ID: %d, Бренд: %s, Модель: %s, Клас: %s, Кузов: %s, Трансмісія: %s, Паливо: %s, Двигун: %.2f л. %.2f к. с., Ціна: %.2f грн/день\n",
+                   inventoryOfCars[i].id, inventoryOfCars[i].brand, inventoryOfCars[i].model, inventoryOfCars[i].class,
+                   inventoryOfCars[i].body, inventoryOfCars[i].transmission, inventoryOfCars[i].fuel, inventoryOfCars[i].engineCapacity, inventoryOfCars[i].enginePower,
+                   inventoryOfCars[i].price);
+        }
+    }
+
+    if (!foundCars) {
+        printf("\nАвтомобілів бренду %s не знайдено.\n", brandFilter);
+    }
+}
+
+void filterForCarsByClass(Car inventoryOfCars[], int numCars) {
+    char classFilter[100];
+    printf("\nВведіть клас автомобілів: ");
+    scanf("%s", classFilter);
+
+    printf("\nРезультати після фільтрації за класом %s:\n", classFilter);
+
+    bool foundCars = false;
+
+    for (int i = 0; i < numCars; i++) {
+        if (strcmp(inventoryOfCars[i].class, classFilter) == 0) {
+            foundCars = true;
+            printf("ID: %d, Бренд: %s, Модель: %s, Клас: %s, Кузов: %s, Трансмісія: %s, Паливо: %s, Двигун: %.2f л. %.2f к. с., Ціна: %.2f грн/день\n",
+                   inventoryOfCars[i].id, inventoryOfCars[i].brand, inventoryOfCars[i].model, inventoryOfCars[i].class,
+                   inventoryOfCars[i].body, inventoryOfCars[i].transmission, inventoryOfCars[i].fuel, inventoryOfCars[i].engineCapacity, inventoryOfCars[i].enginePower,
+                   inventoryOfCars[i].price);
+        }
+    }
+
+    if (!foundCars) {
+        printf("\nАвтомобілів класу %s не знайдено.\n", classFilter);
+    }
+}
+
+void filterForCarsByBodyType(Car inventoryOfCars[], int numCars) {
+    char bodyTypeFilter[100];
+    printf("\nВведіть тип кузова автомобілів: ");
+    scanf("%s", bodyTypeFilter);
+
+    printf("\nРезультати після фільтрації за типом кузова %s:\n", bodyTypeFilter);
+
+    bool foundCars = false;
+
+    for (int i = 0; i < numCars; i++) {
+        if (strcmp(inventoryOfCars[i].body, bodyTypeFilter) == 0) {
+            foundCars = true;
+            printf("ID: %d, Бренд: %s, Модель: %s, Клас: %s, Кузов: %s, Трансмісія: %s, Паливо: %s, Двигун: %.2f л. %.2f к. с., Ціна: %.2f грн/день\n",
+                   inventoryOfCars[i].id, inventoryOfCars[i].brand, inventoryOfCars[i].model, inventoryOfCars[i].class,
+                   inventoryOfCars[i].body, inventoryOfCars[i].transmission, inventoryOfCars[i].fuel, inventoryOfCars[i].engineCapacity, inventoryOfCars[i].enginePower,
+                   inventoryOfCars[i].price);
+        }
+    }
+
+    if (!foundCars) {
+        printf("\nАвтомобілів з типом кузова %s не знайдено.\n", bodyTypeFilter);
+    }
+}
+
+void filterForCarsByTransmission(Car inventoryOfCars[], int numCars) {
+    char transmissionFilter[100];
+    printf("\nВведіть тип трансмісії автомобілів: ");
+    scanf("%s", transmissionFilter);
+
+    printf("\nРезультати після фільтрації за типом трансмісії %s:\n", transmissionFilter);
+
+    bool foundCars = false;
+
+    for (int i = 0; i < numCars; i++) {
+        if (strcmp(inventoryOfCars[i].transmission, transmissionFilter) == 0) {
+            foundCars = true;
+            printf("ID: %d, Бренд: %s, Модель: %s, Клас: %s, Кузов: %s, Трансмісія: %s, Паливо: %s, Двигун: %.2f л. %.2f к. с., Ціна: %.2f грн/день\n",
+                   inventoryOfCars[i].id, inventoryOfCars[i].brand, inventoryOfCars[i].model, inventoryOfCars[i].class,
+                   inventoryOfCars[i].body, inventoryOfCars[i].transmission, inventoryOfCars[i].fuel, inventoryOfCars[i].engineCapacity, inventoryOfCars[i].enginePower,
+                   inventoryOfCars[i].price);
+        }
+    }
+
+    if (!foundCars) {
+        printf("\nАвтомобілів з типом трансмісії %s не знайдено.\n", transmissionFilter);
+    }
+}
+
+void filterForCarsByFuelType(Car inventoryOfCars[], int numCars) {
+    char fuelTypeFilter[100];
+    printf("\nВведіть тип палива автомобілів: ");
+    scanf("%s", fuelTypeFilter);
+
+    printf("\nРезультати після фільтрації за типом палива %s:\n", fuelTypeFilter);
+
+    bool foundCars = false;
+
+    for (int i = 0; i < numCars; i++) {
+        if (strcmp(inventoryOfCars[i].fuel, fuelTypeFilter) == 0) {
+            foundCars = true;
+            printf("ID: %d, Бренд: %s, Модель: %s, Клас: %s, Кузов: %s, Трансмісія: %s, Паливо: %s, Двигун: %.2f л. %.2f к. с., Ціна: %.2f грн/день\n",
+                   inventoryOfCars[i].id, inventoryOfCars[i].brand, inventoryOfCars[i].model, inventoryOfCars[i].class,
+                   inventoryOfCars[i].body, inventoryOfCars[i].transmission, inventoryOfCars[i].fuel, inventoryOfCars[i].engineCapacity, inventoryOfCars[i].enginePower,
+                   inventoryOfCars[i].price);
+        }
+    }
+
+    if (!foundCars) {
+        printf("\nАвтомобілів з типом палива %s не знайдено.\n", fuelTypeFilter);
+    }
+}
+
+void filterForCarsByEngineCapacity(Car inventoryOfCars[], int numCars) {
+    float minCapacity, maxCapacity;
+    printf("\nВведіть (через крапку) мінімальний об'єм двигуна (л): ");
+    scanf("%f", &minCapacity);
+    printf("Введіть (через крапку) максимальний об'єм двигуна (л): ");
+    scanf("%f", &maxCapacity);
+
+    printf("\nРезультати після фільтрації за об'ємом двигуна: %.2f л - %.2f л\n", minCapacity, maxCapacity);
+
+    bool foundCars = false;
+
+    for (int i = 0; i < numCars; i++) {
+        if (inventoryOfCars[i].engineCapacity >= minCapacity && inventoryOfCars[i].engineCapacity <= maxCapacity) {
+            foundCars = true;
+            printf("ID: %d, Бренд: %s, Модель: %s, Клас: %s, Кузов: %s, Трансмісія: %s, Паливо: %s, Двигун: %.2f л. %.2f к. с., Ціна: %.2f грн/день\n",
+                   inventoryOfCars[i].id, inventoryOfCars[i].brand, inventoryOfCars[i].model, inventoryOfCars[i].class,
+                   inventoryOfCars[i].body, inventoryOfCars[i].transmission, inventoryOfCars[i].fuel, inventoryOfCars[i].engineCapacity, inventoryOfCars[i].enginePower,
+                   inventoryOfCars[i].price);
+        }
+    }
+
+    if (!foundCars) {
+        printf("\nАвтомобілів за фільтром об'єму двигуна %.2f л - %.2f л не знайдено.\n", minCapacity, maxCapacity);
+    }
+}
+
+void filterForCarsByEnginePower(Car inventoryOfCars[], int numCars) {
+    float minPower, maxPower;
+    printf("\nВведіть мінімальну потужність двигуна (к. с.): ");
+    scanf("%f", &minPower);
+    printf("Введіть максимальну потужність двигуна (к. с.): ");
+    scanf("%f", &maxPower);
+
+    printf("\nРезультати після фільтрації за потужністю двигуна: %.2f к. с. - %.2f к. с.\n", minPower, maxPower);
+
+    bool foundCars = false;
+
+    for (int i = 0; i < numCars; i++) {
+        if (inventoryOfCars[i].enginePower >= minPower && inventoryOfCars[i].enginePower <= maxPower) {
+            foundCars = true;
+            printf("ID: %d, Бренд: %s, Модель: %s, Клас: %s, Кузов: %s, Трансмісія: %s, Паливо: %s, Двигун: %.2f л. %.2f к. с., Ціна: %.2f грн/день\n",
+                   inventoryOfCars[i].id, inventoryOfCars[i].brand, inventoryOfCars[i].model, inventoryOfCars[i].class,
+                   inventoryOfCars[i].body, inventoryOfCars[i].transmission, inventoryOfCars[i].fuel, inventoryOfCars[i].engineCapacity, inventoryOfCars[i].enginePower,
+                   inventoryOfCars[i].price);
+        }
+    }
+
+    if (!foundCars) {
+        printf("\nАвтомобілів за фільтром потужності двигуна %.2f к. с. - %.2f к. с. не знайдено.\n", minPower, maxPower);
+    }
+}
+
+void filterForCarsByPrice(Car inventoryOfCars[], int numCars) {
+    float minPrice, maxPrice;
+    printf("\nВведіть мінімальну ціну (грн/день): ");
+    scanf("%f", &minPrice);
+    printf("Введіть максимальну ціну (грн/день): ");
+    scanf("%f", &maxPrice);
+
+    printf("\nРезультати після фільтрації за ціною: %.2f грн/день - %.2f грн/день\n", minPrice, maxPrice);
+
+    bool foundCars = false;
+
+    for (int i = 0; i < numCars; i++) {
+        if (inventoryOfCars[i].price >= minPrice && inventoryOfCars[i].price <= maxPrice) {
+            foundCars = true;
+            printf("ID: %d, Бренд: %s, Модель: %s, Клас: %s, Кузов: %s, Трансмісія: %s, Паливо: %s, Двигун: %.2f л. %.2f к. с., Ціна: %.2f грн/день\n",
+                   inventoryOfCars[i].id, inventoryOfCars[i].brand, inventoryOfCars[i].model, inventoryOfCars[i].class,
+                   inventoryOfCars[i].body, inventoryOfCars[i].transmission, inventoryOfCars[i].fuel, inventoryOfCars[i].engineCapacity, inventoryOfCars[i].enginePower,
+                   inventoryOfCars[i].price);
+        }
+    }
+
+    if (!foundCars) {
+        printf("\nАвтомобілів за фільтром ціни %.2f грн/день - %.2f грн/день не знайдено.\n", minPrice, maxPrice);
+    }
+}
+
 
 int main()
 {
