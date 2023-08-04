@@ -931,5 +931,95 @@ int main() {
     inventoryOfCars[49].enginePower = 305;
     inventoryOfCars[49].price = 5100;
 
-    return 0;
+    registerCustomer();
+
+ int option;
+    do {
+        printf("\nГоловне меню");
+        printf("\nОберіть опцію:\n");
+        printf("1. Показати список автомобілів\n");
+        printf("2. Відфільтрувати товари\n");
+        printf("3. Додати автомобіль до кошика\n");
+        printf("4. Показати вміст кошика\n");
+        printf("5. Видалити автомобіль з кошика\n");
+        printf("6. Очистити кошик\n");
+        printf("7. Вийти\n\n");
+        printf("Ваш вибір: ");
+        scanf("%d", &option);
+
+        switch (option) {
+            case 1:
+                listOfCars(inventoryOfCars, countCars);
+                break;
+            case 2:
+                int filterOption;
+                do {
+                    printf("\nОберіть за чим фільтрувати автомобілі для оренди\n");
+                    printf("1. За брендом\n");
+                    printf("2. За класом\n");
+                    printf("3. За кузовом\n");
+                    printf("4. За трансмісією\n");
+                    printf("5. За типом палива\n");
+                    printf("6. За об'ємом двигуна\n");
+                    printf("7. За потужністю двигуна\n");
+                    printf("8. За ціною\n");
+                    printf("9. Повернутись до головного меню\n\n");
+                    printf("Ваш вибір: ");
+                    scanf("%d", &filterOption);
+
+                    switch (filterOption) {
+                        case 1:
+                            filterForCarsByBrand(inventoryOfCars, countCars);
+                            break;
+                        case 2:
+                            filterForCarsByClass(inventoryOfCars, countCars);
+                            break;
+                        case 3:
+                            filterForCarsByBodyType(inventoryOfCars, countCars);
+                            break;
+                        case 4:
+                            filterForCarsByTransmission(inventoryOfCars, countCars);
+                            break;
+                        case 5:
+                            filterForCarsByFuelType(inventoryOfCars, countCars);
+                            break;
+                        case 6:
+                            filterForCarsByEngineCapacity(inventoryOfCars, countCars);
+                            break;
+                        case 7:
+                            filterForCarsByEnginePower(inventoryOfCars, countCars);
+                            break;
+                        case 8:
+                            filterForCarsByPrice(inventoryOfCars, countCars);
+                            break;
+                        case 9:
+                            break;
+                        default:
+                            printf("\nНевірна опція. Будь ласка, спробуйте ще раз.\n");
+                            break;
+                    }
+                } while (filterOption != 9);
+                break;
+            case 3:
+                addRentalToCart(inventoryOfCars, countCars);
+                break;
+            case 4:
+                showCart();
+                break;
+            case 5:
+                removeRentalFromCart();
+                break;
+            case 6:
+                clearCart();
+                break;
+            case 7:
+                printf("\nДякуємо за використання нашого інтернет-сайту!\n");
+                break;
+            default:
+                printf("\nНевірна опція. Будь ласка, спробуйте ще раз.\n");
+                break;
+        }
+    } while (option != 7);
+
+return 0;
 }
